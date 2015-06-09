@@ -1,2 +1,2 @@
 # myLeetCodeSolutions
-Not perfect answers, just my solutions.
+Not perfect answers, just my passed solutions.
