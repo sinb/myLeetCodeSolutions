@@ -1,2 +1,2 @@
 # myLeetCodeSolutions
-My LeetCode solutions.
+Not perfect answers, just my solutions.
