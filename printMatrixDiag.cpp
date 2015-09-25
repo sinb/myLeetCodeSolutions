@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 template <size_t n>
+//从右上开始
 void printMatrixDiagUpRight(int arr[][n])
 {
     for (int j = n; j > 0; j--)
