@@ -29,7 +29,7 @@ public:
         }
         return dummy.next;
     }
-    //assume head is sorted
+    //assume head is sorted, 比如1,4,5,7,x=6会找到5的位置返回
     ListNode* findInsertPos (ListNode* head, int x)
     {
         ListNode *pre = nullptr;
