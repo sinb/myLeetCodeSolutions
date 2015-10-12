@@ -6,7 +6,7 @@ class Solution2 {
 public:
     bool isPalindrome(string s) {
         transform(s.begin(), s.end(), s.begin(), ::tolower);
-        auto left = s.begin(), right = prev(s.end());
+        auto left = s.begin(), right = prev(s.end());//prev can return 上一个位置
         while (left < right) {
         if (!::isalnum(*left)) ++left;
         else if (!::isalnum(*right)) --right;
