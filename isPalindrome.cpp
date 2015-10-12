@@ -1,6 +1,22 @@
 #include <iostream>
 
 using namespace std;
+class Solution2 {
+    //这个是从两边往中间比较
+public:
+    bool isPalindrome(string s) {
+        transform(s.begin(), s.end(), s.begin(), ::tolower);
+        auto left = s.begin(), right = prev(s.end());
+        while (left < right) {
+        if (!::isalnum(*left)) ++left;
+        else if (!::isalnum(*right)) --right;
+        else if (*left != *right) return false;
+        else{ left++, right--; }
+        }
+        return true;
+    }
+};
+
 bool isPalindrome(const char* s, int n) {
     //从中心向两边比较
     if (s == NULL || n < 1)
