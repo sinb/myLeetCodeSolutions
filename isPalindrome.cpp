@@ -21,6 +21,33 @@ bool isPalindrome(const char* s, int n) {
     //边界情况,n=1时应该直接return true,怎么和其他情况放在一起?
     //n=2应该直接返回false
 }
+class Solution {
+public:
+//这个方法用了stack和队列,一个FILO,一个FIFO,比较每个字符即可
+//这个方法很慢
+    bool isPalindrome(string s) {
+        stack<char> stk;
+        queue<char> que;
+        for (auto c :s)
+        {
+            if (isalpha(c) || isdigit(c))
+            {
+                stk.push(tolower(c));
+                que.push(tolower(c));
+            }
+        }
+        while (stk.size() != 0)
+        {
+            char s = stk.top();
+            char q = que.front();
+            if (s != q)
+                return false;
+            stk.pop();
+            que.pop();
+        }
+        return true;
+    }
+};
 int main()
 {
     int n = 5;
