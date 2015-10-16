@@ -4,6 +4,7 @@
 using namespace std;
 class Solution {
 public:
+//参考http://blog.csdn.net/linhuanmars/article/details/21354751
 //这个题的意思是,只要在某一步上能够到达尾端n,那么就能到达了.
 //搞不清楚这是贪心还是动态规划
 //维护两个变量,reach是对整个数组来说,能走的最远距离
