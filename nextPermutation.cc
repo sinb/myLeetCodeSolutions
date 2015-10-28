@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+// http://fisherlei.blogspot.jp/2012/12/leetcode-next-permutation.html
 class Solution {
 public:
     void nextPermutation(vector<int>& nums) {
