@@ -4,6 +4,8 @@ class Solution {
 public:
 //对字符串中的每一个字符,以它为中心,向两边扩展
 //判断这个扩展到的子字符串是不是回文,记录回文的长度,维护一个最大值,并记录最大回文对应的位置和长度以便最后返回
+//由于回文可以是奇数也可以是偶数长度,所以都要判断
+//比如abcba, abba,都是回文,奇数和偶数判断时候略有差别
     string longestPalindrome(string s) {
         int i, j, c;
         int max = 0;
@@ -28,7 +30,7 @@ public:
                 odd = true;
             }
 
-            for (j = 0; (i - j) >= 0 && (i + j + 1) < n; ++j)
+            for (j = 0; (i - j) >= 0 && (i + j + 1) < n; ++j) //even substr
             {
                 if (s[i-j] != s[i+j+1])
                     break;
@@ -51,5 +53,5 @@ public:
 int main()
 {
     Solution s;
-    cout << s.longestPalindrome("abba");
+    cout << s.longestPalindrome("abcbac");
 }
