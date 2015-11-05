@@ -25,6 +25,25 @@ public:
                 return false;
         }
     }
+    //递归， 很慢
+    bool searchMatrixRecur(vector<vector<int>>& matrix, int target) {
+
+        return searchMatrixRecurHelper(matrix, 0, 0, target);
+
+    }
+    bool searchMatrixRecurHelper(vector<vector<int>>& matrix, int r, int c, int target)
+    {
+        if ((r == matrix.size()) || (c == matrix[0].size()))
+            return false;
+        if (target < matrix[r][c])
+            return false;
+        if (target == matrix[r][c])
+            return true;
+        else
+        {
+            return searchMatrixRecurHelper(matrix, r+1, c, target) || searchMatrixRecurHelper(matrix, r, c+1, target);;
+        }
+    }
 };
 int main()
 {
