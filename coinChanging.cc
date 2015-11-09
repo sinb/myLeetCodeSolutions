@@ -2,7 +2,7 @@
 #include <vector>
 #include <climits>
 using namespace std;
-
+//动态规划方法计算 最小硬币组合
 int minCoinChange(int money, vector<int> coins)
 {
     int const n = coins.size();
