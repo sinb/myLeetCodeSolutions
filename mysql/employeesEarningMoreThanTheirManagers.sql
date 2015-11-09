@@ -16,7 +16,14 @@ Given the Employee table, write a SQL query that finds out employees who earn mo
 | Joe      |
 +----------+
 
-##############
+##############子查询方法
 SELECT Name AS Employee FROM Employee e WHERE e.ManagerId IS NOT NULL
 AND e.Salary >
 (SELECT Salary FROM Employee where Id=e.ManagerId)
+##############自连接方法
+SELECT a.Name AS Employee FROM Employee a, Employee b
+WHERE a.ManagerId=b.Id AND a.Salary > b.Salary
+##############自连接的另一种写法
+SELECT a.Name AS Employee FROM Employee a
+INNER JOIN Employee b
+WHERE a.ManagerId=b.Id AND a.Salary>b.Salary
