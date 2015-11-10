@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cmath>
+#include <vector>
+#include <climits>
+#include <fstream>
+#include <algorithm>
+using namespace std;
+bool isOdd(int num)
+{
+    return (num & 1) == 1;
+}
+void oddEvenSord(int *arr, int length)
+{
+    int* pstart = arr;
+    int* pend = arr + length - 1;
+    while (pstart < pend)
+    {
+        if (isOdd(*pstart))
+        {
+            pstart++; //如果前面是奇数,就继续往后走
+        }
+        else if (!isOdd(*pend))
+        {
+            pend--; //如果后面是偶数,就继续往前走
+        }
+        else
+        {
+            swap(*pstart, *pend); //这种情况是前面偶后面奇,要交换
+        }
+    }
+}
+
+int main()
+{
+    int arr[] = {44, 12,33,78,11, 99, 103,22,221};
+    oddEvenSord(arr, sizeof(arr)/sizeof(int));
+    for (size_t i = 0; i < sizeof(arr)/sizeof(int); ++i)
+        cout << arr[i] << " ";
+}
