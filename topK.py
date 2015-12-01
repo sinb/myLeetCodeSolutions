@@ -22,15 +22,8 @@ def topK(arr, k):
                 heapq.heappop(heap)
             heapq.heappush(heap, num)
     return heap
-def leastK(arr, k):
-    heap = []
-    for num in arr:
-        if len(heap) < k or num < heap[0]:
-            if len(heap) == k:
-                heapq.heappop(heap)
-            heapq.heappush(heap, num)
-    return heap            
+      
 top10 = topK(bigArray, 10)
-least10 = leastK(bigArray, 10)
+
 #或者直接用heapq的函数
 #heapq.nlargest( bigArray, k )
