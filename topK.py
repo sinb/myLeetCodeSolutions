@@ -22,7 +22,17 @@ def topK(arr, k):
                 heapq.heappop(heap)
             heapq.heappush(heap, num)
     return heap
-      
+# TOPK用最小堆, BtmK用最大堆,但是heapq没有最大堆,
+# 所以还得用最小堆,方法是把输入数据全部取反(正变负,负变正)
+def leastK(arr, k):
+    heap = []
+    for num in arr:
+        if len(heap) < k or -num > heap[0]:
+            if len(heap) == k:
+                heapq.heappop(heap)
+            heapq.heappush(heap, -num)
+    return [-num for num in heap]
+    
 top10 = topK(bigArray, 10)
 
 #或者直接用heapq的函数
