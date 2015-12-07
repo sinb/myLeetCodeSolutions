@@ -72,6 +72,10 @@ string = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!\"#$%&'
 a = s.lengthOfLongestSubstring(string)
 print a
 ########################
+假设子串里含有重复字符,则父串一定含有重复字符,单个子问题就可以决定父问题,因此可
+以用贪心法。跟动规不同,动规里,单个子问题只能影响父问题,不足以决定父问题。
+从左往右扫描,当遇到重复字母时,以上一个重复字母的 index+1,作为新的搜索起始位置,
+直到最后一个字母,复杂度是 O(n)。
 // LeetCode, Longest Substring Without Repeating Characters
 // 时间复杂度 O(n),空间复杂度 O(1)
 class Solution {
